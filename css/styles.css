@@ -1,0 +1,482 @@
+/* 重置样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* 主容器 - 移动端优先 */
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Logo区域 */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.logo-img {
+    width: 260px;
+    height: 63px;
+    border-radius: 12px;
+    object-fit: contain;
+    display: block;
+}
+
+/* 标题 */
+.title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+/* 分区样式 */
+.section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #333333;
+}
+
+/* 输入表单网格 */
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    color: #cccccc;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.input-group input {
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    padding: 12px 15px;
+    color: #ffffff;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #FF8C00;
+    box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.2);
+}
+
+.input-group input::placeholder {
+    color: #666666;
+}
+
+/* 计算结果样式 */
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #222222;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-label {
+    color: #cccccc;
+    font-size: 14px;
+}
+
+.result-value {
+    color: #FF8C00;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+.result-grid .result-item {
+    border-bottom: 1px solid #222222;
+}
+
+.result-grid .result-item:last-child {
+    border-bottom: 1px solid #222222;
+}
+
+/* 交易结果表格 */
+.trading-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background-color: #333333;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.trading-column {
+    background-color: #000000;
+    padding: 15px;
+}
+
+.column-header {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333333;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 12px;
+}
+
+.result-row .result-label {
+    color: #cccccc;
+    font-size: 12px;
+}
+
+.result-row .result-value {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.profit {
+    color: #00ff88;
+}
+
+.loss {
+    color: #ff4444;
+}
+
+/* 底部信息 */
+.footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #333333;
+}
+
+.footer-text {
+    color: #666666;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.footer-brand {
+    color: #666666;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* 平板端适配 */
+@media (min-width: 768px) {
+    .container {
+        max-width: 500px;
+        padding: 30px;
+    }
+    
+    .logo-img {
+        width: 320px;
+        height: auto;
+    }
+    
+    .title {
+        font-size: 32px;
+    }
+    
+    .input-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .result-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .result-row {
+        font-size: 13px;
+    }
+    
+    .result-row .result-label,
+    .result-row .result-value {
+        font-size: 13px;
+    }
+}
+
+/* PC端适配 */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 600px;
+        padding: 40px;
+    }
+    
+    .logo-img {
+        width: 360px;
+        height: auto;
+    }
+    
+    .title {
+        font-size: 30px;
+    }
+    
+    .section-title {
+        font-size: 18px;
+    }
+    
+    .input-group label {
+        font-size: 15px;
+    }
+    
+    .input-group input {
+        font-size: 16px;
+        padding: 14px 16px;
+    }
+    
+    .result-label {
+        font-size: 15px;
+    }
+    
+    .result-value {
+        font-size: 17px;
+    }
+    
+    .result-row {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+    
+    .result-row .result-label,
+    .result-row .result-value {
+        font-size: 14px;
+    }
+    
+    .column-header {
+        font-size: 17px;
+    }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+    .input-group input {
+        padding: 15px;
+        font-size: 16px;
+    }
+    
+    .result-item {
+        padding: 15px 0;
+    }
+}
+
+/* 高分辨率屏幕优化 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* 深色模式适配（已经是深色主题，但保持兼容性） */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000000;
+        color: #ffffff;
+    }
+}
+
+/* 动画效果 */
+.input-group input,
+.result-value {
+    transition: all 0.3s ease;
+}
+
+.result-value.updating {
+    transform: scale(1.05);
+    color: #FF8C00;
+}
+
+/* 加载状态 */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.updating {
+    animation: pulse 0.3s ease-in-out;
+}
+
+.error-message {
+    color: #ff4444;
+    font-size: 12px;
+    margin-top: 5px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+input.error {
+    border-color: #ff4444 !important;
+    box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.2) !important;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 10px;
+        border-radius: 15px;
+    }
+    
+    .logo-img {
+        width: 240px;
+        height: 58px;
+    }
+    
+    .logo-text {
+        font-size: 20px;
+    }
+    
+    .title {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .input-group {
+        margin-bottom: 15px;
+    }
+    
+    .input-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .input-field {
+        padding: 12px 15px;
+        font-size: 16px;
+    }
+    
+    .calculate-btn {
+        padding: 15px;
+        font-size: 16px;
+        margin: 25px 0;
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .result-item {
+        padding: 12px 15px;
+    }
+    
+    .result-label {
+        font-size: 13px;
+    }
+    
+    .result-value {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 5px;
+        padding: 12px;
+    }
+    
+    .logo-img {
+        width: 200px;
+        height: 48px;
+    }
+    
+    .logo-text {
+        font-size: 18px;
+    }
+    
+    .title {
+        font-size: 16px;
+    }
+    
+    .input-field {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+    
+    .result-item {
+        padding: 10px 12px;
+    }
+    
+    .result-label {
+        font-size: 12px;
+    }
+    
+    .result-value {
+        font-size: 15px;
+    }
+}
